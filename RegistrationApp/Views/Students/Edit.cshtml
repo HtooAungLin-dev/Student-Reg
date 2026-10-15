@@ -1,0 +1,20 @@
+@model RegistrationApp.Models.StudentFormModel
+@{ ViewBag.Title = "Edit Student"; }
+
+<h2>Edit Student</h2>
+
+@using (Html.BeginForm("Edit", "Students", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.RowVersion)
+
+    <div class="row"><div class="col-md-5">
+        @Html.Partial("_StudentFields", Model)
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+    </div></div>
+}
+
+@section Scripts { @Html.Partial("_ValidationScripts") }

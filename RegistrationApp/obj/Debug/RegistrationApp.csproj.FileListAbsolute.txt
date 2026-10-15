@@ -1,0 +1,15 @@
+D:\RegistrationApp_Solution\RegistrationApp\bin\RegistrationApp.dll.config
+D:\RegistrationApp_Solution\RegistrationApp\bin\RegistrationApp.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\RegistrationApp.pdb
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.Mvc.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.Razor.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.Helpers.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.WebPages.Deployment.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.WebPages.Razor.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\System.Web.WebPages.dll
+D:\RegistrationApp_Solution\RegistrationApp\bin\Microsoft.Web.Infrastructure.dll
+D:\RegistrationApp_Solution\RegistrationApp\obj\Debug\RegistrationApp.csproj.AssemblyReference.cache
+D:\RegistrationApp_Solution\RegistrationApp\obj\Debug\RegistrationApp.csproj.CoreCompileInputs.cache
+D:\RegistrationApp_Solution\RegistrationApp\obj\Debug\Registra.7E9504CF.Up2Date
+D:\RegistrationApp_Solution\RegistrationApp\obj\Debug\RegistrationApp.dll
+D:\RegistrationApp_Solution\RegistrationApp\obj\Debug\RegistrationApp.pdb

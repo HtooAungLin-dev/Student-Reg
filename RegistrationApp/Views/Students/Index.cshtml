@@ -1,0 +1,41 @@
+@model RegistrationApp.Models.StudentListViewModel
+@{ ViewBag.Title = "Registered Students"; }
+
+<h2>Registered Students</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+@using (Html.BeginForm("Index", "Students", FormMethod.Get, new { @class = "form-inline", style = "margin-bottom:15px" }))
+{
+    <input type="text" name="q" value="@Model.Query" class="form-control" maxlength="100"
+           placeholder="Search by NRIC or Name" />
+    <button type="submit" class="btn btn-primary">Search</button>
+    @Html.ActionLink("Clear", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Register new student", "Register", null, new { @class = "btn btn-success" })
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>S/N</th><th>NRIC</th><th>Name</th><th>Gender</th><th>Age</th><th>NO. Of Subjects</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var s in Model.Students)
+    {
+        <tr>
+            <td>@s.SN</td>
+            <td>@Html.ActionLink(s.NRIC, "Edit", new { id = s.Id })</td>
+            <td>@s.Name</td>
+            <td>@s.Gender</td>
+            <td>@s.Age</td>
+            <td>@s.SubjectCount</td>
+        </tr>
+    }
+    @if (Model.Students.Count == 0)
+    {
+        <tr><td colspan="6" class="text-center text-muted">No students found.</td></tr>
+    }
+    </tbody>
+</table>

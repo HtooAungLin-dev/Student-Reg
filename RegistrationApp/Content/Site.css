@@ -1,0 +1,3 @@
+body { padding-top: 60px; padding-bottom: 20px; }
+.body-content { padding-left: 15px; padding-right: 15px; }
+input[type="date"].form-control { max-width: 100%; }

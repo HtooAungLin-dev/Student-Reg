@@ -1,0 +1,43 @@
+@model RegistrationApp.Models.StudentFormModel
+
+<div class="form-group">
+    @Html.LabelFor(m => m.NRIC, "NRIC *", new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.NRIC, new { @class = "form-control", maxlength = 9, placeholder = "S1234567A", style = "text-transform:uppercase" })
+    @Html.ValidationMessageFor(m => m.NRIC, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name, "Name *", new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", maxlength = 100 })
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <label class="control-label">Gender *</label><br />
+    <label class="radio-inline">@Html.RadioButtonFor(m => m.Gender, "M") Male</label>
+    <label class="radio-inline">@Html.RadioButtonFor(m => m.Gender, "F") Female</label>
+    @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Birthday, "Birthday *", new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Birthday, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", max = System.DateTime.Today.ToString("yyyy-MM-dd") })
+    @Html.ValidationMessageFor(m => m.Birthday, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.AvailableDate, "Available Date", new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.AvailableDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+    @Html.ValidationMessageFor(m => m.AvailableDate, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <label class="control-label">Subjects</label><br />
+    @foreach (var s in Model.AllSubjects)
+    {
+        <label class="checkbox-inline">
+            <input type="checkbox" name="SelectedSubjectIds" value="@s.Id"
+                   checked="@(Model.SelectedSubjectIds.Contains(s.Id) ? "checked" : null)" /> @s.Name
+        </label>
+    }
+</div>

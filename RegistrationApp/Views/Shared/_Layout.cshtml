@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Student Registration</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Student Registration", "Register", "Students", null, new { @class = "navbar-brand" })
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Register", "Register", "Students")</li>
+                <li>@Html.ActionLink("All Students", "Index", "Students")</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer><p>&copy; @DateTime.Now.Year - Student Registration</p></footer>
+    </div>
+
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
